@@ -1,0 +1,121 @@
+.form-item {
+    margin-bottom: 10px;
+}
+
+.form-item-required {
+    color: #db351f;
+    margin-left: 2px;
+}
+
+.form-item-label {
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f8fa;
+    padding: 10px 20px 0 20px;
+    border-bottom: 1px solid #e6ecf0;
+}
+
+.form-item-name {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    color: #657786;
+}
+
+.form-item-explain-connected {
+    padding: 0 20px;
+
+    padding-top: 6px;
+    font-size: inherit;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+
+    :global {
+        .form-other-node {
+            cursor: pointer;
+            color: #657786;
+            font-size: 14px;
+        }
+    }
+}
+
+.form-item-fail-message {
+    font-size: 12px;
+    opacity: 0.4;
+    color: #db351f;
+    transform: translateY(-30px);
+    transition: transform 0.3s ease-in-out;
+}
+
+/** 处理验证失败表单状态 **/
+.form-item-rule-fail {
+    .form-item-name {
+        color: #db351f;
+    }
+
+    .form-item-label {
+        border-bottom: 1px solid #db351f;
+    }
+    .form-item-fail-message {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/** 
+  子组件样式覆盖
+*/
+.form-item-input-control {
+    width: auto;
+    flex: 1;
+
+    /** Select 样式覆盖 */
+    .formItemSelect {
+        :global {
+            .select-label {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                background: transparent;
+                padding: 0;
+            }
+            .label-value {
+                margin: 0;
+            }
+
+            .language-active {
+                background: #f6f8fa;
+                color: #db351f;
+            }
+
+            .list-item:hover {
+                background: #f6f8fa;
+            }
+        }
+    }
+
+    /** Button 样式覆盖*/
+    .formItemButton {
+    }
+}
+
+.exampleSubmitBtn {
+    margin-top: 20px;
+    width: 100%;
+    color: #fff;
+    background: #db351f;
+    border-color: #db351f;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    font-weight: 700;
+    align-items: center;
+
+    &:hover {
+        border-color: #c72b16;
+        background-color: #c72b16;
+    }
+}

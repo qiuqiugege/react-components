@@ -1,0 +1,132 @@
+@import 'src/styles/theme/theme';
+
+.root {
+    position: relative;
+    min-width: 105px;
+    height: 40px;
+
+    :global {
+        .select-disable {
+            //
+            cursor: no-drop;
+        }
+
+        .select-label {
+            display: flex;
+            align-items: center;
+            min-width: 105px;
+            width: 100%;
+            height: 40px;
+            padding: 0 10px;
+            background: rgba(49, 57, 78, 0.1);
+            border-radius: 6px;
+            cursor: pointer;
+
+            &:hover {
+                // background: rgba(49, 57, 78, 0.08);
+            }
+        }
+
+        .label-lt {
+            display: flex;
+        }
+        .label-value {
+            display: flex;
+            flex: 1;
+            font-size: 14px;
+            color: $color-font-primary;
+            // font-family: 'SFPro-Medium';
+            margin: 0 5px;
+        }
+
+        .input-placeholder {
+            ::placeholder {
+                color: $color-font-primary;
+            }
+        }
+
+        .label-rt {
+            display: flex;
+            transition: transform 0.3s linear;
+        }
+
+        .point-top {
+            transform: rotate(180deg);
+        }
+
+        .list-box {
+            min-width: 200px;
+            width: 100%;
+            max-height: 290px;
+            overflow-y: auto;
+            padding: 10px;
+            position: absolute;
+            z-index: 10;
+            left: 0;
+            bottom: 50px;
+            border-radius: 12px;
+            background: $color-font-light;
+            box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+
+            opacity: 0;
+            visibility: hidden;
+            transform: none;
+            transform: translateY(15px);
+            transition: opacity 0.3s, transform 0.3s, visibility 0s ease-in-out 0.3s;
+        }
+
+        .list-item {
+            width: 100%;
+            height: 40px;
+            font-size: 14px;
+            color: $color-font-primary;
+            border-radius: 6px;
+            padding: 0 10px;
+            line-height: 40px;
+            margin-bottom: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.08);
+            }
+        }
+
+        .language-active {
+            background: rgba(43, 99, 254, 0.1);
+            color: $color-primary;
+        }
+
+        .box-visible {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0s;
+        }
+    }
+}
+
+.bottom {
+    :global {
+        .list-box {
+            top: 50px;
+            bottom: inherit;
+            transform: translateY(-15px);
+        }
+
+        .box-visible {
+            transform: translateY(0);
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .root {
+        :global {
+            .list-item {
+                &:hover {
+                    background: none;
+                }
+            }
+        }
+    }
+}

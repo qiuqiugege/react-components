@@ -1,0 +1,15 @@
+.groupRoot {
+    // display: flex;
+    align-items: center;
+}
+
+.checkboxRoot {
+    display: flex;
+    align-items: center;
+
+    :global {
+        .checkbox-text {
+            margin-left: 5px;
+        }
+    }
+}
